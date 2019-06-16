@@ -1,42 +1,48 @@
 package br.com.vocehamburguer.test.model;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.vocehamburguer.enums.StatusPosAvaliacao;
 import br.com.vocehamburguer.enums.TipoIngrediente;
-import br.com.vocehamburguer.model.Inspetor;
 import br.com.vocehamburguer.model.Cozinheiro;
+import br.com.vocehamburguer.model.Hamburger;
 import br.com.vocehamburguer.model.Ingrediente;
+import br.com.vocehamburguer.model.Inspetor;
 
 public class InspetorTest {
 
 	private Inspetor inspetor;
 	private Cozinheiro cozinheiro;
+	private ArrayList<Ingrediente> ingredientes;
 
 	@Before
 	private void setup() {
-		cozinheiro = new Cozinheiro(0, "Bruno");
+		cozinheiro = new Cozinheiro("Bruno");
+		ingredientes = new ArrayList<Ingrediente>();
+		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(new Ingrediente("Hamburguer de Picanha", TipoIngrediente.HAMBURGUER));
+		ingredientes.add(new Ingrediente("Alface", TipoIngrediente.SALADA));
 	}
 
 	@Test
 	public void deveEntenderAvaliaDeHamburguerComTresIngredientesDiferentes() {
 		// Arrange
 		cozinheiro.criaHamburguer("XBacon");
-		cozinheiro.preparaHamburguer(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
-		cozinheiro.preparaHamburguer(new Ingrediente("Hamburguer de Picanha", TipoIngrediente.HAMBURGUER));
-		cozinheiro.preparaHamburguer(new Ingrediente("Alface", TipoIngrediente.SALADA));
+		cozinheiro.adicionaIngredientes(ingredientes);
+		
 		inspetor.recebeHamburguer(cozinheiro);
-
+		
 		// Action
-		inspetor.avalia();
-		StatusPosAvaliacao obtido = inspetor.statusHamburgerPosAvaliacao();
-
+		Hamburger hamburger = inspetor.avalia(); 
 		// Assert
-		StatusPosAvaliacao esperado = StatusPosAvaliacao.APROVADO;
-		assertEquals(esperado, obtido);
+		assertTrue(hamburger.isPosAvaliacao());
+		assertEquals(3, inspetor.qtdIngredientesHamburguerAvaliado());
 	}
 
 	public void deveEntenderAvaliaDeHamburguerComTresIngredienteIguais() {
@@ -44,11 +50,9 @@ public class InspetorTest {
 
 		// Action
 		inspetor.avalia();
-		StatusPosAvaliacao obtido = inspetor.statusHamburgerPosAvaliacao();
-
+		
 		// Assert
-		StatusPosAvaliacao esperado = StatusPosAvaliacao.REPROVADO;
-		assertEquals(esperado, obtido);
+		assertFalse(inspetor.statusHamburgerPosAvaliacao());
 	}
 
 	public void deveEntenderAvaliaDeHamburguerComApenasUmIngrediente() {
@@ -56,11 +60,9 @@ public class InspetorTest {
 
 		// Action
 		inspetor.avalia();
-		StatusPosAvaliacao obtido = inspetor.statusHamburgerPosAvaliacao();
 
 		// Assert
-		StatusPosAvaliacao esperado = StatusPosAvaliacao.REPROVADO;
-		assertEquals(esperado, obtido);
+		assertFalse(inspetor.statusHamburgerPosAvaliacao());
 	}
 
 	public void deveEntenderAvaliaDeHambuguerComQuatroIngredientes() {
@@ -68,10 +70,8 @@ public class InspetorTest {
 
 		// Action
 		inspetor.avalia();
-		StatusPosAvaliacao obtido = inspetor.statusHamburgerPosAvaliacao();
 
 		// Assert
-		StatusPosAvaliacao esperado = StatusPosAvaliacao.REPROVADO;
-		assertEquals(esperado, obtido);
+		assertFalse(inspetor.statusHamburgerPosAvaliacao());
 	}
 }

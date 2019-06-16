@@ -13,11 +13,8 @@ public class CozinheiroTest {
 	@Test
 	public void deveEntenderQueCozinheiroDevePossuirIdENome() {
 		// Arrange
-		double id = 1;
-		String nome = "Thiago";
-		
 		// Action
-		cozinheiro = new Cozinheiro(id, nome);
+		cozinheiro = new Cozinheiro("Thiago");
 
 		// Assert
 		assertNotNull(cozinheiro.getId());

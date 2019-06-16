@@ -20,6 +20,6 @@ public class HamburgerTest {
 		assertNotNull(hamburger.getNome());
 		assertFalse(hamburger.getNome().isEmpty());
 		assertEquals(0, hamburger.getIngredientes().size());
-		assertNull(hamburger.getPosAvaliacao());
+		assertNull(hamburger.isPosAvaliacao());
 	}
 }

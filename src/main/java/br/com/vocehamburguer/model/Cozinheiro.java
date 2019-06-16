@@ -1,25 +1,20 @@
 package br.com.vocehamburguer.model;
 
+import java.util.List;
+
 import org.apache.commons.lang3.NotImplementedException;
 
-import lombok.Getter;
-
 public class Cozinheiro extends Funcionario{
-
-	@Getter
-	private Hamburger hamburger;
 	
-	public Cozinheiro(double id, String nome) {
-		super(id, nome);
-	}
-	
+	public Cozinheiro(final String nome) {
+		super(nome);
+	}	
 	
 	public void criaHamburguer(final String nomeHamburguer) {
 		throw new NotImplementedException("Método não implementado");
 	}
 	
-	public void preparaHamburguer(final Ingrediente ingrediente) {
+	public void adicionaIngredientes(final List<Ingrediente> ingredientes) {
 		throw new NotImplementedException("Método não implementado");
 	}
-	
 }
