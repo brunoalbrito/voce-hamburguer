@@ -19,20 +19,20 @@ public class Hamburger {
 	private boolean posAvaliacao;
 	
 	public Hamburger(final String nome) {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 	
 	public void adicionaIngrediente(final Ingrediente ingrediente) {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo naoi mplementado");
 	}
 	
 	public void recebeAvaliacao(final boolean posAvaliacao) {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 	
 	
 	public boolean hamburguerAprovado() {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 	
 }

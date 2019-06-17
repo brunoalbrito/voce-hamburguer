@@ -15,7 +15,7 @@ public class EntregaService {
 	
 	public void realizaEntrega(final Hamburger hamburger) {
 		envia(hamburger);
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 	
 	private void envia(final Hamburger hamburger) {

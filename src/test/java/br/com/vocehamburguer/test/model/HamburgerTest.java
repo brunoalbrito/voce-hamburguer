@@ -15,8 +15,13 @@ public class HamburgerTest {
 	
 	@Test
 	public void deveEntenderCriacaoHamburguerIniciaSemIngredientesEPossuiNomeESemAvaliacao() {
-		hamburger = new Hamburger("XRatao");
+		//Arrange
+		String nomeHamburguer = "XRatao";
+	
+		//Action
+		hamburger = new Hamburger(nomeHamburguer);
 		
+		//Assert
 		assertNotNull(hamburger.getNome());
 		assertFalse(hamburger.getNome().isEmpty());
 		assertEquals(0, hamburger.getIngredientes().size());

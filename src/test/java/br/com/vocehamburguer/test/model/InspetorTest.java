@@ -39,7 +39,8 @@ public class InspetorTest {
 		inspetor.recebeHamburguer(cozinheiro);
 		
 		// Action
-		Hamburger hamburger = inspetor.avalia(); 
+		Hamburger hamburger = inspetor.avalia();
+		
 		// Assert
 		assertTrue(hamburger.isPosAvaliacao());
 		assertEquals(3, inspetor.qtdIngredientesHamburguerAvaliado());
