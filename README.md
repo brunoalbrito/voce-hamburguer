@@ -4,7 +4,11 @@ Esse projeto tem com objetivo ser uma atividade de DOJO desenvolvida pra os enco
 
 ## Desafio
 
-O dono da lanchonete Você Hambúrguer, deseja criar um sistema para garantir que a produção dos Hambúrgueres seja informatizada. Eles são produzidos com 3 ingredientes básicos. Um pão, um hambúrguer e uma salada. Existem apenas dois funcionários em cadas estabelecimento. Um cozinheiro e um inspetor, que acompanha todos os hambúrgueres. Após a avaliação, um serviço de entrega é chamado para realizar essa tarefa, que faz a entrega de apenas hambúrgueres que possuem avaliação positiva.
+O dono da lanchonete Você Hambúrguer, deseja criar um sistema para garantir que a produção dos Hambúrgueres seja informatizada. Cada hambúrguer é produzido com 3 ingredientes básicos: um pão, um hambúrguer e uma salada.
+
+Existem apenas dois funcionários em cadas estabelecimento. Um cozinheiro e um inspetor, sendo que, ele inspeciona todos os hambúrgueres. 
+
+Após a avaliação, um serviço de *delivery* é utilizado, ele faz entrega de apenas hambúrgueres que possuem avaliação positiva.
 
 ### Diagrama de Domínio
 <img src="./imagens_readme/diagramaDeClasses.png" width="80%" height="50%">
@@ -12,7 +16,7 @@ O dono da lanchonete Você Hambúrguer, deseja criar um sistema para garantir qu
 
 ## # Desafio
 
-Implemente primeiramente os testes para validar a construção, avaliação e entrega dos hambúrgueres, posteriormente faça a implementação de todos os métodos para obter 100% em todos os testes.
+Implemente primeiramente os testes para validar a construção, avaliação e entrega dos hambúrgueres. Posteriormente faça a implementação de todos os métodos para obter 100% em todos os testes.
 
 ##### Validações:
 
