@@ -20,5 +20,5 @@ public class Funcionario {
 	public Funcionario(final String nome) {
 		this.id = UUID.randomUUID().toString();
 		this.nome = nome;
-	};
+	}
 }

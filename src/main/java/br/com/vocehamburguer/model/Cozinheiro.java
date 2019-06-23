@@ -11,10 +11,10 @@ public class Cozinheiro extends Funcionario{
 	}	
 	
 	public void criaHamburguer(final String nomeHamburguer) {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 	
 	public void adicionaIngredientes(final List<Ingrediente> ingredientes) {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 }

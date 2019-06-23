@@ -24,7 +24,7 @@ Implemente primeiramente os testes para validar a construção, avaliação e en
     • Esses 3 ingredientes devem ser diferentes.
     • Apenas o cozinheiro pode fazer os hambúrgueres. 
     • Ambos Cozinheiro e Inspetor devem possuir o histórico do último hamburguer avaliado.
-    • O serviço de entrega apenas hambúrgueres avaliados positivamente.
+    • O serviço de entrega aceita apenas hambúrgueres avaliados positivamente.
 
 ### Desenvolvido por: 
 [Bruno Albuquerque Brito](https://www.linkedin.com/in/bruno-albuquerque-brito-07258590)

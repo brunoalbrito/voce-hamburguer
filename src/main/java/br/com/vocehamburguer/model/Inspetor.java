@@ -9,18 +9,18 @@ public class Inspetor extends Funcionario {
 	}
 
 	public void recebeHamburguer(final Cozinheiro cozinheiro) {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 
 	public Hamburger avalia() {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 	
 	public boolean statusHamburgerPosAvaliacao() {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 
 	public int qtdIngredientesHamburguerAvaliado() {
-		throw new NotImplementedException("Método não implementado");
+		throw new NotImplementedException("Metodo nao implementado");
 	}
 }
