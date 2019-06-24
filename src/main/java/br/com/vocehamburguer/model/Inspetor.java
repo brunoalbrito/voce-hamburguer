@@ -1,7 +1,5 @@
 package br.com.vocehamburguer.model;
 
-import org.apache.commons.lang3.NotImplementedException;
-
 public class Inspetor extends Funcionario {
 
 	public Inspetor(String nome) {
@@ -9,18 +7,25 @@ public class Inspetor extends Funcionario {
 	}
 
 	public void recebeHamburguer(final Cozinheiro cozinheiro) {
-		throw new NotImplementedException("Metodo nao implementado");
+		super.hamburger = cozinheiro.hamburger;
 	}
 
-	public Hamburger avalia() {
-		throw new NotImplementedException("Metodo nao implementado");
+	public Avaliacao avalia() {
+		for (int i = 1; i < hamburger.getIngredientes().size(); i++) {
+			if(hamburger.getIngredientes().get(i -1).getTipoIngrediente().equals(hamburger.getIngredientes().get(1).getTipoIngrediente())) {
+				hamburger.recebeAvaliacao(false);
+				break;
+			}
+		}
+		hamburger.recebeAvaliacao(true);
+		return new Avaliacao(hamburger) ;
 	}
 	
 	public boolean statusHamburgerPosAvaliacao() {
-		throw new NotImplementedException("Metodo nao implementado");
+		return false;
 	}
 
 	public int qtdIngredientesHamburguerAvaliado() {
-		throw new NotImplementedException("Metodo nao implementado");
+		return 0;
 	}
 }

@@ -4,17 +4,19 @@ import java.util.List;
 
 import org.apache.commons.lang3.NotImplementedException;
 
-public class Cozinheiro extends Funcionario{
+public class Cozinheiro extends Funcionario {
 	
 	public Cozinheiro(final String nome) {
 		super(nome);
 	}	
 	
 	public void criaHamburguer(final String nomeHamburguer) {
-		throw new NotImplementedException("Metodo nao implementado");
+		super.hamburger = new Hamburger(nomeHamburguer);
 	}
 	
 	public void adicionaIngredientes(final List<Ingrediente> ingredientes) {
-		throw new NotImplementedException("Metodo nao implementado");
+		for (Ingrediente ingrediente : ingredientes) {			
+			super.hamburger.adicionaIngrediente(ingrediente);
+		}
 	}
 }
