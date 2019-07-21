@@ -19,4 +19,8 @@ public class Cozinheiro extends Funcionario {
 			super.hamburger.adicionaIngrediente(ingrediente);
 		}
 	}
+
+	public String getNomeHamburguer() {
+		return super.hamburger.getNome();
+	}
 }
