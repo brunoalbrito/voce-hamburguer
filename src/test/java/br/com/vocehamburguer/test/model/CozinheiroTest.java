@@ -36,7 +36,7 @@ public class CozinheiroTest {
 		cozinheiro.criaHamburguer(nomeHamburguer);
 
 		// Assert
-		assertNotNull(cozinheiro.getHamburger());
+		assertNotNull(cozinheiro.getHamburguer());
 		assertEquals(nomeHamburguer, cozinheiro.getNomeHamburguer());
 	}
 

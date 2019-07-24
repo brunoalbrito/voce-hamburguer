@@ -7,25 +7,18 @@ public class Inspetor extends Funcionario {
 	}
 
 	public void recebeHamburguer(final Cozinheiro cozinheiro) {
-		super.hamburger = cozinheiro.hamburger;
+		super.hamburguer = cozinheiro.hamburguer;
 	}
 
 	public Avaliacao avalia() {
-		for (int i = 1; i < hamburger.getIngredientes().size(); i++) {
-			if(hamburger.getIngredientes().get(i -1).getTipoIngrediente().equals(hamburger.getIngredientes().get(1).getTipoIngrediente())) {
-				hamburger.recebeAvaliacao(false);
-				break;
-			}
-		}
-		hamburger.recebeAvaliacao(true);
-		return new Avaliacao(hamburger) ;
+		return new Avaliacao(hamburguer);
 	}
 	
-	public boolean statusHamburgerPosAvaliacao() {
-		return false;
+	public boolean statusHamburguerPosAvaliacao() {
+		return hamburguer.isAprovado();
 	}
 
 	public int qtdIngredientesHamburguerAvaliado() {
-		return 0;
+		return hamburguer.getIngredientes().size();
 	}
 }

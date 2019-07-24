@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import br.com.vocehamburguer.model.Hamburger;
+import br.com.vocehamburguer.model.Hamburguer;
 import br.com.vocehamburguer.repository.DeliveryRepository;
 import br.com.vocehamburguer.service.EntregaService;
 
@@ -18,7 +18,7 @@ public class EntregaServiceTest {
 	
 	private EntregaService servicoEntrega;
 
-	private Hamburger hamburger;
+	private Hamburguer hamburguer;
 	
 	@Before
 	public void setup() {
@@ -27,24 +27,26 @@ public class EntregaServiceTest {
 	}
 	
 	@Test
-	public void deveEntenderRealizaEntragaComHamburgerReprovado() {
+	public void deveEntenderRealizaEntregaComHamburguerReprovado() {
 		//Arrange
+		hamburguer.recebeAvaliacao(false);
 		
 		//Action
-		servicoEntrega.realizaEntrega(hamburger);
+		servicoEntrega.realizaEntrega(hamburguer);
 		
 		//Assert
-		verify(deliveryRepository, times(0)).enviaEntrega(hamburger);
+		verify(deliveryRepository, times(0)).enviaEntrega(hamburguer);
 	}
 	
 	@Test
-	public void deveEntenderRealizaEntragaComHamburgerAprovado() {
+	public void deveEntenderRealizaEntregaComHamburguerAprovado() {
 		//Arrange
+		hamburguer.recebeAvaliacao(true);
 		
 		//Action
-		servicoEntrega.realizaEntrega(hamburger);
+		servicoEntrega.realizaEntrega(hamburguer);
 		
 		//Assert
-		verify(deliveryRepository, times(1)).enviaEntrega(hamburger);
+		verify(deliveryRepository, times(1)).enviaEntrega(hamburguer);
 	}
 }

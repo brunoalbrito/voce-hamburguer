@@ -3,11 +3,9 @@ package br.com.vocehamburguer.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.NotImplementedException;
-
 import lombok.Getter;
 
-public class Hamburger {
+public class Hamburguer {
 	
 	@Getter
 	private String nome;
@@ -15,10 +13,9 @@ public class Hamburger {
 	@Getter
 	private List<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
 	
-	@Getter
 	private boolean posAvaliacao;
 	
-	public Hamburger(final String nome) {
+	public Hamburguer(final String nome) {
 		this.nome = nome;
 	}
 	
@@ -27,13 +24,16 @@ public class Hamburger {
 		
 	}
 	
-	public void recebeAvaliacao(final boolean posAvaliacao) {
-		
+	public void recebeAvaliacao(final Avaliacao avaliacao) {
+		this.posAvaliacao = avaliacao.isResultadoAvaliacao();
 	}
 	
 	
-	public boolean hamburguerAprovado() {
-		return false;
+	public boolean isAprovado() {
+		return posAvaliacao;
 	}
-	
+
+	public void recebeAvaliacao(boolean avaliacao) {
+		this.posAvaliacao = avaliacao;
+	}
 }

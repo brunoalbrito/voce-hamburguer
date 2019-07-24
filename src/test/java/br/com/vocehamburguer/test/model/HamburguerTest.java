@@ -7,11 +7,11 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import br.com.vocehamburguer.model.Hamburger;
+import br.com.vocehamburguer.model.Hamburguer;
 
-public class HamburgerTest {
+public class HamburguerTest {
 	
-	private Hamburger hamburger;
+	private Hamburguer hamburguer;
 	
 	@Test
 	public void deveEntenderCriacaoHamburguerIniciaSemIngredientesEPossuiNomeESemAvaliacao() {
@@ -19,12 +19,12 @@ public class HamburgerTest {
 		String nomeHamburguer = "XRatao";
 	
 		//Action
-		hamburger = new Hamburger(nomeHamburguer);
+		hamburguer = new Hamburguer(nomeHamburguer);
 		
 		//Assert
-		assertNotNull(hamburger.getNome());
-		assertFalse(hamburger.getNome().isEmpty());
-		assertEquals(0, hamburger.getIngredientes().size());
-		assertNull(hamburger.isPosAvaliacao());
+		assertNotNull(hamburguer.getNome());
+		assertFalse(hamburguer.getNome().isEmpty());
+		assertEquals(0, hamburguer.getIngredientes().size());
+		assertNull(hamburguer.isAprovado());
 	}
 }

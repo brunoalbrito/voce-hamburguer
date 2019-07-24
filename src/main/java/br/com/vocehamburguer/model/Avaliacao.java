@@ -5,12 +5,16 @@ import lombok.Data;
 @Data
 public class Avaliacao {
 
-	private boolean nota;
+	private boolean resultadoAvaliacao;
 	
-	private Hamburger hamburger;
+	private Hamburguer hamburguer;
 
-	public Avaliacao(Hamburger hamburger) {
-		this.nota = hamburger.isPosAvaliacao();
-		this.hamburger = hamburger;
+	public Avaliacao(Hamburguer hamburguer) {
+		this.resultadoAvaliacao = hamburguer.isAprovado();
+		this.hamburguer = hamburguer;
+	}
+	
+	public void avaliaHamburguer() {
+		
 	}
 }

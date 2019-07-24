@@ -2,8 +2,6 @@ package br.com.vocehamburguer.model;
 
 import java.util.List;
 
-import org.apache.commons.lang3.NotImplementedException;
-
 public class Cozinheiro extends Funcionario {
 	
 	public Cozinheiro(final String nome) {
@@ -11,16 +9,16 @@ public class Cozinheiro extends Funcionario {
 	}	
 	
 	public void criaHamburguer(final String nomeHamburguer) {
-		super.hamburger = new Hamburger(nomeHamburguer);
+		super.hamburguer = new Hamburguer(nomeHamburguer);
 	}
 	
 	public void adicionaIngredientes(final List<Ingrediente> ingredientes) {
 		for (Ingrediente ingrediente : ingredientes) {			
-			super.hamburger.adicionaIngrediente(ingrediente);
+			super.hamburguer.adicionaIngrediente(ingrediente);
 		}
 	}
 
 	public String getNomeHamburguer() {
-		return super.hamburger.getNome();
+		return super.hamburguer.getNome();
 	}
 }

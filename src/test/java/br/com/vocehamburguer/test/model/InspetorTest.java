@@ -13,7 +13,6 @@ import org.junit.Test;
 import br.com.vocehamburguer.enums.TipoIngrediente;
 import br.com.vocehamburguer.model.Avaliacao;
 import br.com.vocehamburguer.model.Cozinheiro;
-import br.com.vocehamburguer.model.Hamburger;
 import br.com.vocehamburguer.model.Ingrediente;
 import br.com.vocehamburguer.model.Inspetor;
 
@@ -45,7 +44,7 @@ public class InspetorTest {
 		Avaliacao avaliacao = inspetor.avalia();
 		
 		// Assert
-		assertTrue(avaliacao.isNota());
+		assertTrue(avaliacao.isResultadoAvaliacao());
 		assertEquals(3, inspetor.qtdIngredientesHamburguerAvaliado());
 	}
 
@@ -56,7 +55,7 @@ public class InspetorTest {
 		inspetor.avalia();
 		
 		// Assert
-		assertFalse(inspetor.statusHamburgerPosAvaliacao());
+		assertFalse(inspetor.statusHamburguerPosAvaliacao());
 	}
 
 	public void deveEntenderAvaliaDeHamburguerComApenasUmIngrediente() {
@@ -66,7 +65,7 @@ public class InspetorTest {
 		inspetor.avalia();
 
 		// Assert
-		assertFalse(inspetor.statusHamburgerPosAvaliacao());
+		assertFalse(inspetor.statusHamburguerPosAvaliacao());
 	}
 
 	public void deveEntenderAvaliaDeHambuguerComQuatroIngredientes() {
@@ -76,6 +75,6 @@ public class InspetorTest {
 		inspetor.avalia();
 
 		// Assert
-		assertFalse(inspetor.statusHamburgerPosAvaliacao());
+		assertFalse(inspetor.statusHamburguerPosAvaliacao());
 	}
 }

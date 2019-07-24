@@ -15,7 +15,7 @@ public class Funcionario {
 	private String nome;
 	
 	@Getter
-	protected Hamburger hamburger;
+	protected Hamburguer hamburguer;
 	
 	public Funcionario(final String nome) {
 		this.id = UUID.randomUUID().toString();
