@@ -2,29 +2,35 @@ package br.com.vocehamburguer.test.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.com.vocehamburguer.model.Hamburguer;
 
 public class HamburguerTest {
-	
+
 	private Hamburguer hamburguer;
+	private String nomeHamburguer;
+
+	@Before
+	public void init() {
+		nomeHamburguer = "X-Salada";
+		hamburguer = new Hamburguer(nomeHamburguer);
+	}
 	
 	@Test
-	public void deveEntenderCriacaoHamburguerIniciaSemIngredientesEPossuiNomeESemAvaliacao() {
-		//Arrange
-		String nomeHamburguer = "XRatao";
+	public void deveEntenderCriacaoHamburguerPossuiNome() {
+		assertEquals(nomeHamburguer, hamburguer.getNome());
+	}
 	
-		//Action
-		hamburguer = new Hamburguer(nomeHamburguer);
-		
-		//Assert
-		assertNotNull(hamburguer.getNome());
-		assertFalse(hamburguer.getNome().isEmpty());
+	@Test
+	public void deveEntenderCriacaoHamburguerIniciaSemIngredientes(){
 		assertEquals(0, hamburguer.getIngredientes().size());
-		assertNull(hamburguer.isAprovado());
+	}
+	
+	@Test
+	public void deveEntenderCriacaoHamburguerAvaliacaoEFalsa() {
+		assertFalse(hamburguer.isAprovado());
 	}
 }

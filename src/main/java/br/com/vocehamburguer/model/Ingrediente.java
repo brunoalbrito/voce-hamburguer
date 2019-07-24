@@ -1,8 +1,10 @@
 package br.com.vocehamburguer.model;
 
 import br.com.vocehamburguer.enums.TipoIngrediente;
+import lombok.Builder;
 import lombok.Getter;
 
+@Builder
 public class Ingrediente {
 	
 	@Getter
