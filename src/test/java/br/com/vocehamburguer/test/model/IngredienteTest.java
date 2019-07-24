@@ -8,18 +8,23 @@ import br.com.vocehamburguer.enums.TipoIngrediente;
 import br.com.vocehamburguer.model.Ingrediente;
 
 public class IngredienteTest {
-	
+
 	private Ingrediente ingrediente;
-	
+
+	private String nomeIngrediente;
+
+	private TipoIngrediente tipoIngrediente;
+
+	public void init() {
+		nomeIngrediente = "Hamburguer de Picanha";
+		tipoIngrediente = TipoIngrediente.HAMBURGUER;
+		ingrediente = new Ingrediente(null, null);
+	}
+
 	@Test
 	public void deveEntenderIngredienteComNomeETipoSendoHamburguer() {
-		//Arrange
-		
-		//Action
-		ingrediente = new Ingrediente(null, null);
-		
-		//Assert
-		assertEquals("Hamburguer de Picanha", ingrediente.getNome());
-		assertEquals(TipoIngrediente.HAMBURGUER, ingrediente.getTipoIngrediente());
+		// Assert
+		assertEquals(nomeIngrediente, ingrediente.getNome());
+		assertEquals(tipoIngrediente, ingrediente.getTipoIngrediente());
 	}
 }
