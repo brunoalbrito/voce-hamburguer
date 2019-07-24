@@ -2,6 +2,7 @@ package br.com.vocehamburguer.test.model;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.com.vocehamburguer.enums.TipoIngrediente;
@@ -15,10 +16,11 @@ public class IngredienteTest {
 
 	private TipoIngrediente tipoIngrediente;
 
+	@Before
 	public void init() {
 		nomeIngrediente = "Hamburguer de Picanha";
 		tipoIngrediente = TipoIngrediente.HAMBURGUER;
-		ingrediente = new Ingrediente(null, null);
+		ingrediente = new Ingrediente(nomeIngrediente, tipoIngrediente);
 	}
 
 	@Test
