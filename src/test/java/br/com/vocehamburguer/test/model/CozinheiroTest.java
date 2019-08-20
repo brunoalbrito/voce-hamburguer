@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.vocehamburguer.enums.TipoIngrediente;
@@ -45,6 +46,7 @@ public class CozinheiroTest {
 		assertEquals(nomeHamburguer, cozinheiro.getNomeHamburguer());
 	}
 
+	@Ignore
 	@Test
 	public void deveEntenderQueCozinheiroAdicionaTresIngredientesAoHamburguer() {
 		// Arrange
