@@ -1,6 +1,7 @@
 # Você Hamburguer <img src="./imagens_readme/burger.png" width="50" height="50">
 
 [![Build Status](https://travis-ci.org/brunoalbrito/voce-hamburguer.svg?branch=master)](https://travis-ci.org/brunoalbrito/voce-hamburguer)
+[![codecov](https://codecov.io/gh/brunoalbrito/voce-hamburguer/branch/master/graph/badge.svg)](https://codecov.io/gh/brunoalbrito/voce-hamburguer)
 
 Esse projeto tem com objetivo ser uma atividade de DOJO desenvolvida pra os encontros semanais da SMU Crowdfunding. 
 
