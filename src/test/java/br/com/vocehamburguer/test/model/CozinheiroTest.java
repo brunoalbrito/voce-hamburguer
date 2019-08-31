@@ -7,23 +7,26 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.vocehamburguer.enums.TipoIngrediente;
 import br.com.vocehamburguer.model.Cozinheiro;
 import br.com.vocehamburguer.model.Ingrediente;
+import br.com.vocehamburguer.model.Ingrediente.IngredienteBuilder;
 
 public class CozinheiroTest {
 
 	private Cozinheiro cozinheiro;
 
 	private String nomeDoCozinheiro;
+	
+	private String nomeHamburguer = "X-Salada";
 
 	@Before
 	public void setup() {
 		nomeDoCozinheiro = "Thiago";
 		cozinheiro = new Cozinheiro(nomeDoCozinheiro);
+		criaHamburguer();
 	}
 
 	@Test
@@ -35,29 +38,34 @@ public class CozinheiroTest {
 
 	@Test
 	public void deveEntenderQueCozinheiroCriaHamburguer() {
-		// Arrange
-		String nomeHamburguer = "X-Salada";
-
-		// Action
-		cozinheiro.criaHamburguer(nomeHamburguer);
-
 		// Assert
 		assertNotNull(cozinheiro.getHamburguer());
 		assertEquals(nomeHamburguer, cozinheiro.getNomeHamburguer());
 	}
 
-	@Ignore
+	private void criaHamburguer() {
+		cozinheiro.criaHamburguer(nomeHamburguer);
+	}
+
 	@Test
 	public void deveEntenderQueCozinheiroAdicionaTresIngredientesAoHamburguer() {
 		// Arrange
-		Ingrediente ingrediente1 = Ingrediente.builder().nome("Hamburguer de Picanha")
+		Ingrediente ingrediente1 = criaIngrediente().nome("Hamburguer de Picanha")
 				.tipoIngrediente(TipoIngrediente.HAMBURGUER).build();
-		List<Ingrediente> ingredientes = Arrays.asList(ingrediente1);
+		Ingrediente ingrediente2 = criaIngrediente().nome("Pao Frances")
+				.tipoIngrediente(TipoIngrediente.PAO).build();
+		Ingrediente ingrediente3 = criaIngrediente().nome("Tomate")
+				.tipoIngrediente(TipoIngrediente.SALADA).build();
+		List<Ingrediente> ingredientes = Arrays.asList(ingrediente1, ingrediente2, ingrediente3);
 
 		// Action
 		cozinheiro.adicionaIngredientes(ingredientes);
 
 		// Assert
 		assertEquals(3, cozinheiro.getHamburguer().getIngredientes().size());
+	}
+
+	private IngredienteBuilder criaIngrediente() {
+		return Ingrediente.builder();
 	}
 }
