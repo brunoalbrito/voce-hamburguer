@@ -6,7 +6,6 @@ import lombok.Getter;
 import java.util.UUID;
 
 @Getter
-@AllArgsConstructor
 public class Funcionario {
 
 	private String id;
