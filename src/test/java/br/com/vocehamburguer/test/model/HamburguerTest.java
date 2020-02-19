@@ -11,6 +11,7 @@ import br.com.vocehamburguer.model.Hamburguer;
 public class HamburguerTest {
 
 	private Hamburguer hamburguer;
+
 	private String nomeHamburguer;
 
 	@Before
@@ -18,19 +19,20 @@ public class HamburguerTest {
 		nomeHamburguer = "X-Salada";
 		hamburguer = new Hamburguer(nomeHamburguer);
 	}
-	
+
 	@Test
 	public void deveEntenderCriacaoHamburguerPossuiNome() {
 		assertEquals(nomeHamburguer, hamburguer.getNome());
 	}
-	
+
 	@Test
-	public void deveEntenderCriacaoHamburguerIniciaSemIngredientes(){
+	public void deveEntenderCriacaoHamburguerIniciaSemIngredientes() {
 		assertEquals(0, hamburguer.getIngredientes().size());
 	}
-	
+
 	@Test
 	public void deveEntenderCriacaoHamburguerAvaliacaoEFalsa() {
 		assertFalse(hamburguer.isAprovado());
 	}
+
 }

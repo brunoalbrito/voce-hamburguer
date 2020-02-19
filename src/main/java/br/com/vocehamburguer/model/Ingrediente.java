@@ -11,10 +11,10 @@ public class Ingrediente {
 	private String nome;
 
 	private TipoIngrediente tipoIngrediente;
-	
-	
+
 	public Ingrediente(final String nome, final TipoIngrediente tipoIngrediente) {
 		this.nome = nome;
 		this.tipoIngrediente = tipoIngrediente;
 	}
+
 }

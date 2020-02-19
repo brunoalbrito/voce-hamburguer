@@ -13,9 +13,10 @@ public class Funcionario {
 	private String nome;
 
 	protected Hamburguer hamburguer;
-	
+
 	public Funcionario(final String nome) {
 		this.id = UUID.randomUUID().toString();
 		this.nome = nome;
 	}
+
 }

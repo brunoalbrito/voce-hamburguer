@@ -29,4 +29,5 @@ public class IngredienteTest {
 		assertEquals(nomeIngrediente, ingrediente.getNome());
 		assertEquals(tipoIngrediente, ingrediente.getTipoIngrediente());
 	}
+
 }

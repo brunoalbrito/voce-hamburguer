@@ -19,7 +19,7 @@ public class CozinheiroTest {
 	private Cozinheiro cozinheiro;
 
 	private String nomeDoCozinheiro;
-	
+
 	private String nomeHamburguer = "X-Salada";
 
 	@Before
@@ -52,10 +52,8 @@ public class CozinheiroTest {
 		// Arrange
 		Ingrediente ingrediente1 = criaIngrediente().nome("Hamburguer de Picanha")
 				.tipoIngrediente(TipoIngrediente.HAMBURGUER).build();
-		Ingrediente ingrediente2 = criaIngrediente().nome("Pao Frances")
-				.tipoIngrediente(TipoIngrediente.PAO).build();
-		Ingrediente ingrediente3 = criaIngrediente().nome("Tomate")
-				.tipoIngrediente(TipoIngrediente.SALADA).build();
+		Ingrediente ingrediente2 = criaIngrediente().nome("Pao Frances").tipoIngrediente(TipoIngrediente.PAO).build();
+		Ingrediente ingrediente3 = criaIngrediente().nome("Tomate").tipoIngrediente(TipoIngrediente.SALADA).build();
 		List<Ingrediente> ingredientes = Arrays.asList(ingrediente1, ingrediente2, ingrediente3);
 
 		// Action
@@ -68,4 +66,5 @@ public class CozinheiroTest {
 	private IngredienteBuilder criaIngrediente() {
 		return Ingrediente.builder();
 	}
+
 }

@@ -20,7 +20,9 @@ import br.com.vocehamburguer.model.Inspetor;
 public class InspetorTest {
 
 	private Inspetor inspetor;
+
 	private Cozinheiro cozinheiro;
+
 	private List<Ingrediente> ingredientes;
 
 	@Before
@@ -39,12 +41,12 @@ public class InspetorTest {
 		// Arrange
 		cozinheiro.criaHamburguer("XBacon");
 		cozinheiro.adicionaIngredientes(ingredientes);
-		
-		inspetor.recebeHamburguer(cozinheiro);	
-		
+
+		inspetor.recebeHamburguer(cozinheiro);
+
 		// Action
 		Avaliacao avaliacao = inspetor.avalia();
-		
+
 		// Assert
 		assertTrue(avaliacao.isResultadoAvaliacao());
 		assertEquals(3, inspetor.qtdIngredientesHamburguerAvaliado());
@@ -55,7 +57,7 @@ public class InspetorTest {
 
 		// Action
 		inspetor.avalia();
-		
+
 		// Assert
 		assertFalse(inspetor.statusHamburguerPosAvaliacao());
 	}
@@ -79,4 +81,5 @@ public class InspetorTest {
 		// Assert
 		assertFalse(inspetor.statusHamburguerPosAvaliacao());
 	}
+
 }

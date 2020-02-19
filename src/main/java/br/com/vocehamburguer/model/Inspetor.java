@@ -13,7 +13,7 @@ public class Inspetor extends Funcionario {
 	public Avaliacao avalia() {
 		return new Avaliacao(hamburguer);
 	}
-	
+
 	public boolean statusHamburguerPosAvaliacao() {
 		return hamburguer.isAprovado();
 	}
@@ -21,4 +21,5 @@ public class Inspetor extends Funcionario {
 	public int qtdIngredientesHamburguerAvaliado() {
 		return hamburguer.getIngredientes().size();
 	}
+
 }
