@@ -4,13 +4,12 @@ import br.com.vocehamburguer.enums.TipoIngrediente;
 import lombok.Builder;
 import lombok.Getter;
 
+@Getter
 @Builder
 public class Ingrediente {
-	
-	@Getter
+
 	private String nome;
-	
-	@Getter
+
 	private TipoIngrediente tipoIngrediente;
 	
 	

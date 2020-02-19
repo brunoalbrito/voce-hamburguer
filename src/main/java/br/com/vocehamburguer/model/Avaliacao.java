@@ -1,8 +1,8 @@
 package br.com.vocehamburguer.model;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class Avaliacao {
 
 	private boolean resultadoAvaliacao;
