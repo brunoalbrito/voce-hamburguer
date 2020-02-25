@@ -2,9 +2,10 @@ package br.com.vocehamburguer.model;
 
 import lombok.Getter;
 
-@Getter
+
 public class Avaliacao {
 
+	@Getter
 	private boolean resultadoAvaliacao;
 
 	private Hamburguer hamburguer;
@@ -16,6 +17,7 @@ public class Avaliacao {
 	public boolean avaliaHamburguer() {
 		this.resultadoAvaliacao = true;
 		if(hamburguer.getIngredientes().size() < 3){
+			this.resultadoAvaliacao = false;
 			return false;
 		}
 		for (int i = 0; i < hamburguer.getIngredientes().size() -1; i++) {
@@ -24,6 +26,7 @@ public class Avaliacao {
 				break;
 			}
 		}
+		hamburguer.recebeAvaliacao(this);
 		return resultadoAvaliacao;
 	}
 

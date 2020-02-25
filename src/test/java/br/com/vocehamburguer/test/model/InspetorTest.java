@@ -60,11 +60,14 @@ public class InspetorTest {
 		assertFalse(inspetor.statusHamburguerPosAvaliacao());
 	}
 
+	@Test
 	public void deveEntenderAvaliaDeHamburguerComApenasUmIngrediente() {
 		// Arrange
+		ingredientes.add(criaIngrediente("Pao de Forma", TipoIngrediente.PAO));
+		preparaHamburguer();
 
 		// Action
-		inspetor.avalia();
+		Avaliacao avaliacao = inspetor.avalia();
 
 		// Assert
 		assertFalse(inspetor.statusHamburguerPosAvaliacao());
@@ -87,15 +90,19 @@ public class InspetorTest {
 	}
 
 	private void itensDiferentes() {
-		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
-		ingredientes.add(new Ingrediente("Hamburguer de Picanha", TipoIngrediente.HAMBURGUER));
-		ingredientes.add(new Ingrediente("Alface", TipoIngrediente.SALADA));
+		ingredientes.add(criaIngrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(criaIngrediente("Hamburguer de Picanha", TipoIngrediente.HAMBURGUER));
+		ingredientes.add(criaIngrediente("Alface", TipoIngrediente.SALADA));
 	}
 
 	private void itensIguais() {
-		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
-		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
-		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(criaIngrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(criaIngrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(criaIngrediente("Pao de Batata", TipoIngrediente.PAO));
+	}
+
+	private Ingrediente criaIngrediente(String nome, TipoIngrediente tipoIngrediente){
+		return new Ingrediente(nome, tipoIngrediente);
 	}
 
 }
