@@ -4,6 +4,6 @@ import br.com.vocehamburguer.model.Hamburguer;
 
 public interface DeliveryRepository {
 
-	public void enviaEntrega(final Hamburguer hamburguer);
+	void enviaEntrega(final Hamburguer hamburguer);
 
 }

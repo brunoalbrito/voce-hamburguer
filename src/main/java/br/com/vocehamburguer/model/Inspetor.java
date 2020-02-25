@@ -11,7 +11,10 @@ public class Inspetor extends Funcionario {
 	}
 
 	public Avaliacao avalia() {
-		return new Avaliacao(hamburguer);
+		Avaliacao avaliacao = new Avaliacao(hamburguer);
+		avaliacao.avaliaHamburguer();
+		hamburguer.recebeAvaliacao(avaliacao);
+		return avaliacao;
 	}
 
 	public boolean statusHamburguerPosAvaliacao() {

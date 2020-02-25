@@ -31,9 +31,4 @@ public class Hamburguer {
 	public boolean isAprovado() {
 		return posAvaliacao;
 	}
-
-	public void recebeAvaliacao(boolean avaliacao) {
-		this.posAvaliacao = avaliacao;
-	}
-
 }

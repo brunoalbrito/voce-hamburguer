@@ -35,7 +35,6 @@ public class InspetorTest {
 		ingredientes.add(new Ingrediente("Alface", TipoIngrediente.SALADA));
 	}
 
-	@Ignore
 	@Test
 	public void deveEntenderAvaliacaoDeHamburguerComTresIngredientesDiferentes() {
 		// Arrange
