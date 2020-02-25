@@ -30,18 +30,13 @@ public class InspetorTest {
 		cozinheiro = new Cozinheiro("Bruno");
 		inspetor = new Inspetor("Bugiganga");
 		ingredientes = new ArrayList<Ingrediente>();
-		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
-		ingredientes.add(new Ingrediente("Hamburguer de Picanha", TipoIngrediente.HAMBURGUER));
-		ingredientes.add(new Ingrediente("Alface", TipoIngrediente.SALADA));
 	}
 
 	@Test
 	public void deveEntenderAvaliacaoDeHamburguerComTresIngredientesDiferentes() {
 		// Arrange
-		cozinheiro.criaHamburguer("XBacon");
-		cozinheiro.adicionaIngredientes(ingredientes);
-
-		inspetor.recebeHamburguer(cozinheiro);
+		itensDiferentes();
+		preparaHamburguer();
 
 		// Action
 		Avaliacao avaliacao = inspetor.avalia();
@@ -51,11 +46,15 @@ public class InspetorTest {
 		assertEquals(3, inspetor.qtdIngredientesHamburguerAvaliado());
 	}
 
+
+	@Test
 	public void deveEntenderAvaliaDeHamburguerComTresIngredienteIguais() {
 		// Arrange
+		itensIguais();
+		preparaHamburguer();
 
 		// Action
-		inspetor.avalia();
+		Avaliacao avaliacao = inspetor.avalia();
 
 		// Assert
 		assertFalse(inspetor.statusHamburguerPosAvaliacao());
@@ -79,6 +78,24 @@ public class InspetorTest {
 
 		// Assert
 		assertFalse(inspetor.statusHamburguerPosAvaliacao());
+	}
+
+	private void preparaHamburguer() {
+		cozinheiro.criaHamburguer("XBacon");
+		cozinheiro.adicionaIngredientes(ingredientes);
+		inspetor.recebeHamburguer(cozinheiro);
+	}
+
+	private void itensDiferentes() {
+		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(new Ingrediente("Hamburguer de Picanha", TipoIngrediente.HAMBURGUER));
+		ingredientes.add(new Ingrediente("Alface", TipoIngrediente.SALADA));
+	}
+
+	private void itensIguais() {
+		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
+		ingredientes.add(new Ingrediente("Pao de Batata", TipoIngrediente.PAO));
 	}
 
 }

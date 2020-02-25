@@ -19,8 +19,9 @@ public class Avaliacao {
 			return false;
 		}
 		for (int i = 0; i < hamburguer.getIngredientes().size() -1; i++) {
-			if(hamburguer.getIngredientes().get(i).equals(hamburguer.getIngredientes().get(i + 1))){
-				return false;
+			if(hamburguer.getIngredientes().get(i).getTipoIngrediente().compareTo(hamburguer.getIngredientes().get(i + 1).getTipoIngrediente()) == 0){
+				resultadoAvaliacao = false;
+				break;
 			}
 		}
 		return resultadoAvaliacao;
