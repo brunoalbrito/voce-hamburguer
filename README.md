@@ -25,8 +25,8 @@ Implemente primeiramente os testes para validar a construção, avaliação e en
     • Os lanches podem conter apenas 3 ingredientes.
     • Esses 3 ingredientes devem ser diferentes.
     • Apenas o cozinheiro pode fazer os hambúrgueres. 
-    • Ambos Cozinheiro e Inspetor devem possuir o histórico do último hamburguer avaliado.
+    • O Inspedor deve analisar o hamburguer para determinar se está aprovado ou reprovado.
     • O serviço de entrega aceita apenas hambúrgueres avaliados positivamente.
 
 ### Desenvolvido por: 
-[Bruno Albuquerque Brito](https://www.linkedin.com/in/bruno-albuquerque-brito-07258590)
+[Bruno Albuquerque Brito](https://www.linkedin.com/in/bruno-albuquerque-brito)
