@@ -35,7 +35,7 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		boolean resultado = inspetor.analisa();
+		boolean resultado = inspetor.avalia();
 
 		// Assert
 		assertTrue(resultado);
@@ -48,7 +48,7 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		boolean resultado = inspetor.analisa();
+		boolean resultado = inspetor.avalia();
 
 		// Assert
 		assertFalse(resultado);
@@ -61,7 +61,7 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		boolean resultado = inspetor.analisa();
+		boolean resultado = inspetor.avalia();
 
 		// Assert
 		assertFalse(resultado);
@@ -76,7 +76,7 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		boolean resultado = inspetor.analisa();
+		boolean resultado = inspetor.avalia();
 
 		// Assert
 		assertFalse(resultado);

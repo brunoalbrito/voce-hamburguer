@@ -10,7 +10,7 @@ public class Inspetor extends Funcionario {
 		super.hamburguer = cozinheiro.hamburguer;
 	}
 
-	public boolean analisa() {
+	public boolean avalia() {
 		Avaliacao avaliacao = new Avaliacao(hamburguer);
 		return avaliacao.executaAvaliacao();
 	}
