@@ -1,18 +1,17 @@
 package br.com.vocehamburguer.test.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-import java.util.Arrays;
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import br.com.vocehamburguer.enums.TipoIngrediente;
 import br.com.vocehamburguer.model.Cozinheiro;
 import br.com.vocehamburguer.model.Ingrediente;
 import br.com.vocehamburguer.model.Ingrediente.IngredienteBuilder;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class CozinheiroTest {
 
@@ -43,10 +42,6 @@ public class CozinheiroTest {
 		assertEquals(nomeHamburguer, cozinheiro.getNomeHamburguer());
 	}
 
-	private void criaHamburguer() {
-		cozinheiro.criaHamburguer(nomeHamburguer);
-	}
-
 	@Test
 	public void deveEntenderQueCozinheiroAdicionaTresIngredientesAoHamburguer() {
 		// Arrange
@@ -61,6 +56,10 @@ public class CozinheiroTest {
 
 		// Assert
 		assertEquals(3, cozinheiro.getHamburguer().getIngredientes().size());
+	}
+
+	private void criaHamburguer() {
+		cozinheiro.criaHamburguer(nomeHamburguer);
 	}
 
 	private IngredienteBuilder criaIngrediente() {

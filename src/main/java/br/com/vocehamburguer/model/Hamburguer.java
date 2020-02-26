@@ -31,4 +31,5 @@ public class Hamburguer {
 	public boolean isAprovado() {
 		return posAvaliacao;
 	}
+
 }

@@ -1,12 +1,11 @@
 package br.com.vocehamburguer.test.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-
+import br.com.vocehamburguer.model.Hamburguer;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.vocehamburguer.model.Hamburguer;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class HamburguerTest {
 

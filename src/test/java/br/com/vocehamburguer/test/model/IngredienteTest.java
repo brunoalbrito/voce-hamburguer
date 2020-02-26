@@ -1,12 +1,11 @@
 package br.com.vocehamburguer.test.model;
 
-import static org.junit.Assert.assertEquals;
-
+import br.com.vocehamburguer.enums.TipoIngrediente;
+import br.com.vocehamburguer.model.Ingrediente;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.vocehamburguer.enums.TipoIngrediente;
-import br.com.vocehamburguer.model.Ingrediente;
+import static org.junit.Assert.assertEquals;
 
 public class IngredienteTest {
 

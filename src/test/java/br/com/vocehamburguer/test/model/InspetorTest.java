@@ -1,21 +1,17 @@
 package br.com.vocehamburguer.test.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import br.com.vocehamburguer.enums.TipoIngrediente;
 import br.com.vocehamburguer.model.Avaliacao;
 import br.com.vocehamburguer.model.Cozinheiro;
 import br.com.vocehamburguer.model.Ingrediente;
 import br.com.vocehamburguer.model.Inspetor;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class InspetorTest {
 
@@ -46,7 +42,6 @@ public class InspetorTest {
 		assertEquals(3, inspetor.qtdIngredientesHamburguerAvaliado());
 	}
 
-
 	@Test
 	public void deveEntenderAvaliaDeHamburguerComTresIngredienteIguais() {
 		// Arrange
@@ -73,8 +68,13 @@ public class InspetorTest {
 		assertFalse(inspetor.statusHamburguerPosAvaliacao());
 	}
 
+	@Test
 	public void deveEntenderAvaliaDeHambuguerComQuatroIngredientes() {
 		// Arrange
+		itensDiferentes();
+		Ingrediente ingrediente = criaIngrediente("Pao de Forma", TipoIngrediente.PAO);
+		ingredientes.add(ingrediente);
+		preparaHamburguer();
 
 		// Action
 		inspetor.avalia();
@@ -101,7 +101,7 @@ public class InspetorTest {
 		ingredientes.add(criaIngrediente("Pao de Batata", TipoIngrediente.PAO));
 	}
 
-	private Ingrediente criaIngrediente(String nome, TipoIngrediente tipoIngrediente){
+	private Ingrediente criaIngrediente(String nome, TipoIngrediente tipoIngrediente) {
 		return new Ingrediente(nome, tipoIngrediente);
 	}
 
