@@ -1,7 +1,6 @@
 package br.com.vocehamburguer.test.model;
 
 import br.com.vocehamburguer.enums.TipoIngrediente;
-import br.com.vocehamburguer.model.Avaliacao;
 import br.com.vocehamburguer.model.Cozinheiro;
 import br.com.vocehamburguer.model.Ingrediente;
 import br.com.vocehamburguer.model.Inspetor;
@@ -11,7 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class InspetorTest {
 
@@ -25,7 +25,7 @@ public class InspetorTest {
 	public void setup() {
 		cozinheiro = new Cozinheiro("Bruno");
 		inspetor = new Inspetor("Bugiganga");
-		ingredientes = new ArrayList<Ingrediente>();
+		ingredientes = new ArrayList<>();
 	}
 
 	@Test
@@ -35,11 +35,10 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		Avaliacao avaliacao = inspetor.avalia();
+		boolean resultado = inspetor.analisa();
 
 		// Assert
-		assertTrue(avaliacao.isResultadoAvaliacao());
-		assertEquals(3, inspetor.qtdIngredientesHamburguerAvaliado());
+		assertTrue(resultado);
 	}
 
 	@Test
@@ -49,10 +48,10 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		Avaliacao avaliacao = inspetor.avalia();
+		boolean resultado = inspetor.analisa();
 
 		// Assert
-		assertFalse(inspetor.statusHamburguerPosAvaliacao());
+		assertFalse(resultado);
 	}
 
 	@Test
@@ -62,10 +61,10 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		Avaliacao avaliacao = inspetor.avalia();
+		boolean resultado = inspetor.analisa();
 
 		// Assert
-		assertFalse(inspetor.statusHamburguerPosAvaliacao());
+		assertFalse(resultado);
 	}
 
 	@Test
@@ -77,10 +76,10 @@ public class InspetorTest {
 		preparaHamburguer();
 
 		// Action
-		inspetor.avalia();
+		boolean resultado = inspetor.analisa();
 
 		// Assert
-		assertFalse(inspetor.statusHamburguerPosAvaliacao());
+		assertFalse(resultado);
 	}
 
 	private void preparaHamburguer() {

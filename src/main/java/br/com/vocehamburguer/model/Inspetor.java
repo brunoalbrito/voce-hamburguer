@@ -10,19 +10,9 @@ public class Inspetor extends Funcionario {
 		super.hamburguer = cozinheiro.hamburguer;
 	}
 
-	public Avaliacao avalia() {
+	public boolean analisa() {
 		Avaliacao avaliacao = new Avaliacao(hamburguer);
-		avaliacao.avaliaHamburguer();
-		hamburguer.recebeAvaliacao(avaliacao);
-		return avaliacao;
-	}
-
-	public boolean statusHamburguerPosAvaliacao() {
-		return hamburguer.isAprovado();
-	}
-
-	public int qtdIngredientesHamburguerAvaliado() {
-		return hamburguer.getIngredientes().size();
+		return avaliacao.executaAvaliacao();
 	}
 
 }

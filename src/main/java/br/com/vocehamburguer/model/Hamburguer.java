@@ -5,31 +5,23 @@ import java.util.List;
 
 import lombok.Getter;
 
+@Getter
 public class Hamburguer {
 
-	@Getter
 	private String nome;
 
-	@Getter
-	private List<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
+	private List<Ingrediente> ingredientes;
 
-	private boolean posAvaliacao;
+	private boolean aprovado;
 
 	public Hamburguer(final String nome) {
+		this.ingredientes = new ArrayList<Ingrediente>();
 		this.nome = nome;
 	}
 
 	public void adicionaIngrediente(final Ingrediente ingrediente) {
 		this.ingredientes.add(ingrediente);
 
-	}
-
-	public void recebeAvaliacao(final Avaliacao avaliacao) {
-		this.posAvaliacao = avaliacao.isResultadoAvaliacao();
-	}
-
-	public boolean isAprovado() {
-		return posAvaliacao;
 	}
 
 }
